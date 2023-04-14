@@ -132,7 +132,7 @@ public class PlayingCard {
 		String numberWord;
 		switch (getSuit()) {
 		case CLUBS:
-			suitWord = "SPADES";
+			suitWord = "CLUBS";
 			break;
 		case DIAMONDS:
 			suitWord = "DIAMONDS";
