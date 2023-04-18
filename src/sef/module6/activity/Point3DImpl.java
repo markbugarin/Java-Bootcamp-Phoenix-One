@@ -26,7 +26,9 @@ public class Point3DImpl extends Point2DImpl implements Point3D{
 	 * @param z coordinate along the z axis
 	 */
 	public Point3DImpl(double x, double y, double z){
-		
+		this.x=x;
+		this.y=y;
+		this.z = z;
 	}
 	
 	
@@ -34,7 +36,7 @@ public class Point3DImpl extends Point2DImpl implements Point3D{
 	 * @see sef.module5.activity.Point3D#setZ(double)
 	 */
 	public final void setZ(double z){
-	
+		this.z=z;
 	}
 	
 	
@@ -42,14 +44,16 @@ public class Point3DImpl extends Point2DImpl implements Point3D{
 	 * @see sef.module5.activity.Point3D#getZ()
 	 */
 	public final double getZ(){
-		return 0;
+		return z;
 	}
 	
 	/* (non-Javadoc)
 	 * @see sef.module5.activity.Point3D#move(double, double, double)
 	 */
 	public void move(double x2, double y2, double z2){
-	
+		setX(x2);
+		setY(y2);
+		setZ(z2);
 	}
 	
 	
@@ -57,7 +61,9 @@ public class Point3DImpl extends Point2DImpl implements Point3D{
 	 * @see sef.module5.activity.Point3D#translate(double, double, double)
 	 */
 	public void translate(double x2, double y2, double z2){
-		
+		x+=x2;
+		y+=y2;
+		z+=z2;
 	}
 	
 	
@@ -65,7 +71,7 @@ public class Point3DImpl extends Point2DImpl implements Point3D{
 	 * @see sef.module5.activity.Point3D#equals(double, double, double)
 	 */
 	public boolean equals(double x2, double y2, double z2){
-		
+		if (x==x2 && y==y2 && z==z2) return true; 
 		return false;
 	}
 	
@@ -78,8 +84,9 @@ public class Point3DImpl extends Point2DImpl implements Point3D{
 	 * @return true if the parameter is an instance of Point3D and contain the same coordinates, false otherwise
 	 */
 	public boolean equals(Object p){
-	
-		return false;
+		Point2D that = (Point2D) p;
+		Point3D that2 = (Point3D) p;
+        return this.x == that.getX() && this.y == that.getY() && z==that2.getZ();
 		
 	}
 	
@@ -88,8 +95,10 @@ public class Point3DImpl extends Point2DImpl implements Point3D{
 	 * @see sef.module5.activity.Point3D#getDistance(sef.module5.activity.Point3D)
 	 */
 	public double getDistance(Point3D p){
-	
-		return 0;
+		double dx = this.x - p.getX();
+		double dy = this.y - p.getY();
+		double dz = this.z - p.getZ();
+		return Math.sqrt(dx * dx + dy * dy + dz * dz);
 	}
 	
 
@@ -97,8 +106,10 @@ public class Point3DImpl extends Point2DImpl implements Point3D{
 	 * @see sef.module5.activity.Point3D#getDistance(double, double, double)
 	 */
 	public double getDistance(double x2, double y2, double z2){
-		
-		return 0;
+		double dx = this.x - x2;
+		double dy = this.y - y2;
+		double dz = this.z - z2;
+		return Math.sqrt(dx * dx + dy * dy + dz * dz);
 	
 	}
 	
