@@ -2,6 +2,7 @@ package sef.module9.activity;
 
 import java.util.Comparator;
 
+
 /**
  * Comparator used to compare the distance attributes of two RadarContacts.  If the
  * first parameter is closer than the second, the compare() method will return a negative
@@ -18,7 +19,6 @@ public class DistanceComparator implements Comparator<RadarContact>{
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */
 	public int compare(RadarContact c1, RadarContact c2) {
-		
-		return 1;
+		return 0;
 	}
 }
